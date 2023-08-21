@@ -78,7 +78,7 @@ class Mock implements SubscriberInterface, \Countable
         $event->intercept($item);
     }
 
-    public function count()
+    public function count() : int
     {
         return count($this->queue);
     }

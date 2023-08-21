@@ -85,7 +85,7 @@ class BatchResults implements \Countable, \IteratorAggregate, \ArrayAccess
      *
      * @return \ArrayIterator
      */
-    public function getIterator()
+    public function getIterator() : \Iterator
     {
         $results = [];
         foreach ($this->hash as $key) {
@@ -100,7 +100,7 @@ class BatchResults implements \Countable, \IteratorAggregate, \ArrayAccess
      *
      * @return int
      */
-    public function count()
+    public function count() : int
     {
         return count($this->hash);
     }
@@ -112,7 +112,7 @@ class BatchResults implements \Countable, \IteratorAggregate, \ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($key)
+    public function offsetExists($key) : bool
     {
         return $key < count($this->hash);
     }
@@ -136,12 +136,12 @@ class BatchResults implements \Countable, \IteratorAggregate, \ArrayAccess
         return null;
     }
 
-    public function offsetUnset($key)
+    public function offsetUnset($key) : void
     {
         throw new \RuntimeException('Not implemented');
     }
 
-    public function offsetSet($key, $value)
+    public function offsetSet($key, $value) : void
     {
         throw new \RuntimeException('Not implemented');
     }

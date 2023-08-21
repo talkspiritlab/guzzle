@@ -10,7 +10,7 @@ trait HasDataTrait
     /** @var array */
     protected $data = [];
 
-    public function getIterator()
+    public function getIterator() : \Iterator
     {
         return new \ArrayIterator($this->data);
     }
@@ -20,27 +20,27 @@ trait HasDataTrait
         return isset($this->data[$offset]) ? $this->data[$offset] : null;
     }
 
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value) : void
     {
         $this->data[$offset] = $value;
     }
 
-    public function offsetExists($offset)
+    public function offsetExists($offset) : bool
     {
         return isset($this->data[$offset]);
     }
 
-    public function offsetUnset($offset)
+    public function offsetUnset($offset) : void
     {
         unset($this->data[$offset]);
     }
 
-    public function toArray()
+    public function toArray() : array
     {
         return $this->data;
     }
 
-    public function count()
+    public function count() : int
     {
         return count($this->data);
     }

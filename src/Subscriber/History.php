@@ -73,7 +73,7 @@ class History implements SubscriberInterface, \IteratorAggregate, \Countable
      *
      * @return \Iterator
      */
-    public function getIterator()
+    public function getIterator() : \Iterator
     {
         return new \ArrayIterator($this->transactions);
     }
@@ -105,7 +105,7 @@ class History implements SubscriberInterface, \IteratorAggregate, \Countable
      *
      * @return int
      */
-    public function count()
+    public function count() : int
     {
         return count($this->transactions);
     }
@@ -125,7 +125,7 @@ class History implements SubscriberInterface, \IteratorAggregate, \Countable
      *
      * @return RequestInterface
      */
-    public function getLastRequest($asSent = false)
+    public function getLastRequest($asSent = false) : RequestInterface
     {
         return $asSent
             ? end($this->transactions)['sent_request']
@@ -137,7 +137,7 @@ class History implements SubscriberInterface, \IteratorAggregate, \Countable
      *
      * @return ResponseInterface|null
      */
-    public function getLastResponse()
+    public function getLastResponse() : ?ResponseInterface
     {
         return end($this->transactions)['response'];
     }
@@ -145,7 +145,7 @@ class History implements SubscriberInterface, \IteratorAggregate, \Countable
     /**
      * Clears the history
      */
-    public function clear()
+    public function clear() : void
     {
         $this->transactions = array();
     }

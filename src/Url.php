@@ -585,7 +585,7 @@ class Url
     public static function encodePath($path)
     {
         static $cb = [__CLASS__, 'encodeMatch'];
-        return preg_replace_callback(self::$pathPattern, $cb, $path);
+        return preg_replace_callback(self::$pathPattern, $cb, (string) $path);
     }
 
     private static function encodeMatch(array $match)
