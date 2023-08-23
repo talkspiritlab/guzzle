@@ -134,7 +134,7 @@ class PostBody implements PostBodyInterface
      *
      * @return int
      */
-    public function count()
+    public function count() : int
     {
         return count($this->files) + count($this->fields);
     }

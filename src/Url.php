@@ -138,7 +138,7 @@ class Url
         $query = null,
         $fragment = null
     ) {
-        $this->scheme = strtolower($scheme);
+        $this->scheme = strtolower((string) $scheme);
         $this->host = $host;
         $this->port = $port;
         $this->username = $username;

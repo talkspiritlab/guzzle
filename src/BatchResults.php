@@ -124,6 +124,7 @@ class BatchResults implements \Countable, \IteratorAggregate, \ArrayAccess
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($key)
     {
         $i = -1;
