@@ -180,12 +180,12 @@ class CookieJar implements CookieJarInterface, ToArrayInterface
         return true;
     }
 
-    public function count()
+    public function count() : int
     {
         return count($this->cookies);
     }
 
-    public function getIterator()
+    public function getIterator() : \Iterator
     {
         return new \ArrayIterator(array_values($this->cookies));
     }

@@ -15,6 +15,7 @@ trait HasDataTrait
         return new \ArrayIterator($this->data);
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->data[$offset]) ? $this->data[$offset] : null;
