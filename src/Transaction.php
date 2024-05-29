@@ -98,6 +98,6 @@ class Transaction
     ) {
         $this->client = $client;
         $this->request = $request;
-        $this->_future = $future;
+        $this->future = $future;
     }
 }
